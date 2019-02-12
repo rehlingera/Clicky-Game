@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 
-const styles = {
-    imgStyle: {
-        width: "100%"
-    }
-};
-
-function ClickItem(props, state) {
+function ClickItem(props) {
     return (
         <img
+            style={
+                {
+                    width: "100%"
+                }
+            }
             src={props.src}
-            style={styles.imgStyle}
             className="clickImage"
             alt={props.alt}
             id={props.id}
             clicked={props.clicked}
-            onClick={() =>props.handleClickChange(props.id)}
+            onClick={() => props.handleClickChange(props.id)}
         />
     );
 }

@@ -1,62 +1,62 @@
 [
     {
         "id": 1,
-        "image": "/images/cat1.png",
+        "image": "./images/cat1.png",
         "clicked": false
     },
     {
         "id": 2,
-        "image": "/images/cat2.png",
+        "image": "./images/cat2.png",
         "clicked": false
     },
     {
         "id": 3,
-        "image": "/images/cat3.png",
+        "image": "./images/cat3.png",
         "clicked": false
     },
     {
         "id": 4,
-        "image": "/images/cat4.png",
+        "image": "./images/cat4.png",
         "clicked": false
     },
     {
         "id": 5,
-        "image": "/images/cat5.png",
+        "image": "./images/cat5.png",
         "clicked": false
     },
     {
         "id": 6,
-        "image": "/images/cat6.png",
+        "image": "./images/cat6.png",
         "clicked": false
     },
     {
         "id": 7,
-        "image": "/images/cat7.png",
+        "image": "./images/cat7.png",
         "clicked": false
     },
     {
         "id": 8,
-        "image": "/images/cat8.png",
+        "image": "./images/cat8.png",
         "clicked": false
     },
     {
         "id": 9,
-        "image": "/images/cat9.png",
+        "image": "./images/cat9.png",
         "clicked": false
     },
     {
         "id": 10,
-        "image": "/images/cat10.png",
+        "image": "./images/cat10.png",
         "clicked": false
     },
     {
         "id": 11,
-        "image": "/images/cat11.png",
+        "image": "./images/cat11.png",
         "clicked": false
     },
     {
         "id": 12,
-        "image": "/images/cat12.png",
+        "image": "./images/cat12.png",
         "clicked": false
     }
 ]
