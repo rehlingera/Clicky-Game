@@ -24,6 +24,9 @@ const styles = {
     divStyle: {
         display: "inline-block",
         width: "25%"
+    },
+    h2Style: {
+        fontFamily: "Comfortaa, cursive"
     }
 };
 
@@ -43,7 +46,6 @@ class Game extends Component {
         console.log(id)
         var target = Cats.filter(item => item.id === id);
         if (target[0].clicked) {
-            this.setState({ currentScore: 0 });
             console.log("loss");
             this.handleIncorrect();
             this.handleReset();
@@ -53,7 +55,7 @@ class Game extends Component {
             this.setState({ currentScore: this.currentScore + 1 })
             console.log("good");
             this.handleIncrease();
-            this.handleCorrect();
+            this.state.currentScore === 11 ? this.handleWin() : this.handleCorrect();
             randomize(Cats);
         }
 
@@ -73,6 +75,7 @@ class Game extends Component {
         for (var i=0; i<Cats.length; i++) {
             Cats[i].clicked=false;
         };
+        this.setState({ currentScore: 0 });
     };
 
     handleCorrect = () => {
@@ -80,14 +83,19 @@ class Game extends Component {
     };
 
     handleIncorrect = () => {
-        this.setState({ output: "Oh no! Kitty bit you!" });
+        this.setState({ output: "Oh no! Kitty bit you! Start over." });
     };
+
+    handleWin = () => {
+        this.setState({ output: "You won! You are a cat-comforting prodigy! Click any cat to start again." })
+        this.handleReset();
+    }
 
     render() {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-info">
-                    <a className="navbar-brand" href="#">Cat Consoler</a>
+                    <h3 style={styles.h2Style}>Cat Consoler</h3>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

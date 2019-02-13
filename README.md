@@ -1,6 +1,6 @@
 # Cat Consoler
 
-Cat Consoler is a "clicy-game"-style application using React.
+Cat Consoler is a "clicky-game"-style application using React.
 
 Deployed Page: https://rehlingera.github.io/Clicky-Game/
 
