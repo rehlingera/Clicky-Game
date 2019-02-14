@@ -18,8 +18,10 @@ var randomize = array => {
     return array;
 }
 
+// Call the randomize function
 randomize(Cats);
 
+// The styles to be passed down to some elements of this component
 const styles = {
     divStyle: {
         display: "inline-block",
@@ -30,6 +32,7 @@ const styles = {
     }
 };
 
+// The Game component
 class Game extends Component {
     constructor(props) {
         super(props);
@@ -42,6 +45,7 @@ class Game extends Component {
         output: "Console the scared cats! But be careful not to pet the same cat twice! Stressed out cats bite people!"
     }
 
+    // Function to be called when a cat is clicked
     handleClickChange = (id) => {
         console.log(id)
         var target = Cats.filter(item => item.id === id);
@@ -61,6 +65,7 @@ class Game extends Component {
 
     };
 
+    // Function to be called when the score increases
     handleIncrease = () => {
         if (this.state.topScore === this.state.currentScore) {
             this.setState({ currentScore: this.state.currentScore + 1 });
@@ -71,6 +76,7 @@ class Game extends Component {
         }
     };
 
+    // Function to be called when the game resets
     handleReset = () => {
         for (var i=0; i<Cats.length; i++) {
             Cats[i].clicked=false;
@@ -78,19 +84,23 @@ class Game extends Component {
         this.setState({ currentScore: 0 });
     };
 
+    // Function to be called when a guess is correct and the feedback is positive
     handleCorrect = () => {
         this.setState({ output: "Good kitty!" });
     };
 
+    // Function to be called when a guess is incorrectand the feedback is negative
     handleIncorrect = () => {
         this.setState({ output: "Oh no! Kitty bit you! Start over." });
     };
 
+    // Function to be called when the game is won
     handleWin = () => {
         this.setState({ output: "You won! You are a cat-comforting prodigy! Click any cat to start again." })
         this.handleReset();
     }
 
+    // Stuff to render to the DOM
     render() {
         return (
             <div>
@@ -106,6 +116,7 @@ class Game extends Component {
                             </li>
                         </ul>
                         <span className="navbar-text">
+                            {/* Render the current score and the top score in the nav bar */}
                             <CurrentScore>{this.state.currentScore}</CurrentScore> | <TopScore>{this.state.topScore}</TopScore>
                         </span>
                     </div>
@@ -113,12 +124,14 @@ class Game extends Component {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-12'>
+                            {/* Render the feedback below the nav bar */}
                             <Feedback>{this.state.output}</Feedback>
                         </div>
                     </div>
                     <div className='row'>
                         <div className='col-2'></div>
                         <div className='col-8'>
+                            {/* Populate the cats below the feedback */}
                             {
                                 Cats.map(
                                     item => (
